@@ -1,0 +1,15 @@
+C:\Users\nearg\Desktop\표지제작기\OpenCvSharpExtern.dll
+C:\Users\nearg\Desktop\표지제작기\the great cover generator.exe.config
+C:\Users\nearg\Desktop\표지제작기\the great cover generator.exe
+C:\Users\nearg\Desktop\표지제작기\the great cover generator.pdb
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the great cover generator.csproj.AssemblyReference.cache
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the great cover generator.csproj.SuggestedBindingRedirects.cache
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the_great_cover_generator.the_great_cover_generator.resources
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the_great_cover_generator.Properties.Resources.resources
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the great cover generator.csproj.GenerateResource.cache
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the great cover generator.csproj.CoreCompileInputs.cache
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the great cover generator.csproj.Fody.CopyLocal.cache
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the great cover generator.csproj.Fody.RuntimeCopyLocal.cache
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the great cover generator.csproj.CopyComplete
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the great cover generator.exe
+D:\!Github\the-great-cover-generator\the great cover generator\the great cover generator\obj\x64\Release\the great cover generator.pdb
