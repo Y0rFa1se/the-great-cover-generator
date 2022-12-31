@@ -16,7 +16,7 @@ namespace the_great_cover_generator
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			Application.Run(new the_great_cover_generator());
 		}
 	}
 }
