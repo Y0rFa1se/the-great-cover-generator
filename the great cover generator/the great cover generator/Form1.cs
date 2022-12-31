@@ -30,6 +30,7 @@ namespace the_great_cover_generator
 			InitializeComponent();
 			adsbanner.ShowAd(728, 90, "p4678cjlfyac");
 			subject_combobox.SelectedItem = "독서";
+
 		}
 
 		private void picture_picbox_Click(object sender, EventArgs e)
@@ -169,12 +170,12 @@ namespace the_great_cover_generator
 					Cv2.BitwiseAnd(mask, picture, _result);
 					Cv2.Add(_result, cover, result);
 
+					Directory.CreateDirectory(output_dir + "/result");
+					Cv2.ImWrite(output_dir + "/result/result" + (i + 1).ToString() + ".png", result);
+
 					Cv2.ImShow("완료!", result);
 					Cv2.WaitKey(0);
 					Cv2.DestroyAllWindows();
-
-					Cv2.ImWrite(output_dir + "/result/result" + (i + 1).ToString() + ".png", result);
-					Directory.CreateDirectory(output_dir + "/result");
 				}
 
 				MessageBox.Show("ㅇㅇ", "다됨");

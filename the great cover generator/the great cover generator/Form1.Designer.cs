@@ -48,7 +48,7 @@
 			this.adsbanner.ApplicationId = null;
 			this.adsbanner.BackColor = System.Drawing.Color.White;
 			this.adsbanner.HeightAd = 0;
-			this.adsbanner.Location = new System.Drawing.Point(88, 455);
+			this.adsbanner.Location = new System.Drawing.Point(116, 456);
 			this.adsbanner.Margin = new System.Windows.Forms.Padding(4);
 			this.adsbanner.Name = "adsbanner";
 			this.adsbanner.Size = new System.Drawing.Size(728, 90);
@@ -218,6 +218,7 @@
 			this.Controls.Add(this.adsbanner);
 			this.Controls.Add(this.picture_picbox);
 			this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "the_great_cover_generator";
