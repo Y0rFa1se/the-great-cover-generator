@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using AdsJumboWinForm;
+using System.Linq.Expressions;
+using System.Security.AccessControl;
 
 namespace the_great_cover_generator
 {
@@ -140,9 +142,12 @@ namespace the_great_cover_generator
 		}
 		private void picture_dir_listbox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string selected = picture_dir_listbox.SelectedItem.ToString();
+			string selected = picture_dir_listbox.SelectedItem?.ToString();
 
-			picture_picbox.Image = Image.FromFile(selected.Substring(0, selected.IndexOf(".png")) + "_preview.png");
+			if (selected != null & selected != "사진을 선택해주세요 (여러장 선택 가능)")
+			{
+				picture_picbox.Image = Image.FromFile(selected.Substring(0, selected.IndexOf(".png")) + "_preview.png");
+			}
 		}
 		private void output_dir_button_Click(object sender, EventArgs e)
 		{
