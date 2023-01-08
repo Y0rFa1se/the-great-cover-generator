@@ -1,20 +1,8 @@
 ﻿using OpenCvSharp;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Composition;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
-using AdsJumboWinForm;
-using System.Linq.Expressions;
-using System.Security.AccessControl;
 
 namespace the_great_cover_generator
 {
@@ -47,7 +35,7 @@ namespace the_great_cover_generator
 				}
 				cnt_pic = 1;
 
-				ofd.Filter = "사진만|*.png|사진만|*.jpg|사진만|*.*";
+				ofd.Filter = "사진만 (png)|*.png|사진만 (jpg)|*.jpg|사진만 (all)|*.*";
 				ofd.Title = "사진 선택좀";
 				ofd.Multiselect = true;
 				ofd.ShowDialog();
@@ -69,13 +57,13 @@ namespace the_great_cover_generator
 
 						while (true)
 						{
-							if (img.Cols < 800 | img.Rows < 1009)
+							if (img.Cols < 800 || img.Rows < 1009)
 							{
 								Cv2.Resize(img, dst, new OpenCvSharp.Size(img.Cols * 2, img.Rows * 2));
 								img = dst;
 							}
 
-							else if (img.Cols * 0.8 > 800 & img.Rows * 0.8 > 1009)
+							else if (img.Cols * 0.8 > 800 && img.Rows * 0.8 > 1009)
 							{
 								Cv2.Resize(img, dst, new OpenCvSharp.Size(img.Cols * 0.8, img.Rows * 0.8));
 								img = dst;
@@ -144,7 +132,7 @@ namespace the_great_cover_generator
 		{
 			string selected = picture_dir_listbox.SelectedItem?.ToString();
 
-			if (selected != null & selected != "사진을 선택해주세요 (여러장 선택 가능)")
+			if (selected != null && selected != "사진을 선택해주세요 (여러장 선택 가능)")
 			{
 				picture_picbox.Image = Image.FromFile(selected.Substring(0, selected.IndexOf(".png")) + "_preview.png");
 			}

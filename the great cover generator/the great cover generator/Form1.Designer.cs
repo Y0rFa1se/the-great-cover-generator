@@ -38,8 +38,8 @@
 			this.subject_combobox = new System.Windows.Forms.ComboBox();
 			this.subject_label = new System.Windows.Forms.Label();
 			this.description_label = new System.Windows.Forms.Label();
-			this.picture_picbox = new System.Windows.Forms.PictureBox();
 			this.output_dir_button = new System.Windows.Forms.Button();
+			this.picture_picbox = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.picture_picbox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -48,7 +48,7 @@
 			this.adsbanner.ApplicationId = null;
 			this.adsbanner.BackColor = System.Drawing.Color.White;
 			this.adsbanner.HeightAd = 0;
-			this.adsbanner.Location = new System.Drawing.Point(116, 456);
+			this.adsbanner.Location = new System.Drawing.Point(111, 456);
 			this.adsbanner.Margin = new System.Windows.Forms.Padding(4);
 			this.adsbanner.Name = "adsbanner";
 			this.adsbanner.Size = new System.Drawing.Size(728, 90);
@@ -180,16 +180,6 @@
 			this.description_label.Text = "※이미지 처리 방식을 바꾼 후에는\r\n이미지를 다시 불러와 주세요\r\n\r\n※이미지가 변형되는게 꼬우시면\r\n이미지 사이즈를\r\n800x1009로 준비해 " +
     "주세요★";
 			// 
-			// picture_picbox
-			// 
-			this.picture_picbox.Image = global::the_great_cover_generator.Properties.Resources.사진_넣어주세요;
-			this.picture_picbox.Location = new System.Drawing.Point(31, 35);
-			this.picture_picbox.Name = "picture_picbox";
-			this.picture_picbox.Size = new System.Drawing.Size(320, 400);
-			this.picture_picbox.TabIndex = 0;
-			this.picture_picbox.TabStop = false;
-			this.picture_picbox.Click += new System.EventHandler(this.picture_picbox_Click);
-			// 
 			// output_dir_button
 			// 
 			this.output_dir_button.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -200,6 +190,16 @@
 			this.output_dir_button.Text = "출력 경로";
 			this.output_dir_button.UseVisualStyleBackColor = true;
 			this.output_dir_button.Click += new System.EventHandler(this.output_dir_button_Click);
+			// 
+			// picture_picbox
+			// 
+			this.picture_picbox.Image = global::the_great_cover_generator.Properties.Resources.사진_넣어주세요;
+			this.picture_picbox.Location = new System.Drawing.Point(31, 35);
+			this.picture_picbox.Name = "picture_picbox";
+			this.picture_picbox.Size = new System.Drawing.Size(320, 400);
+			this.picture_picbox.TabIndex = 0;
+			this.picture_picbox.TabStop = false;
+			this.picture_picbox.Click += new System.EventHandler(this.picture_picbox_Click);
 			// 
 			// the_great_cover_generator
 			// 
