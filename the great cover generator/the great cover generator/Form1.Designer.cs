@@ -177,8 +177,8 @@
 			this.description_label.Name = "description_label";
 			this.description_label.Size = new System.Drawing.Size(173, 84);
 			this.description_label.TabIndex = 9;
-			this.description_label.Text = "※이미지 처리 방식을 바꾼 후에는\r\n이미지를 다시 불러와 주세요\r\n\r\n※이미지가 변형되는게 꼬우시면\r\n이미지 사이즈를\r\n800x1009로 준비해 " +
-    "주세요★";
+			this.description_label.Text = "※이미지 처리 방식을 바꾼 후에는\r\n이미지를 다시 불러와 주세요\r\n\r\n※이미지가 변형되는게 꼬우시면\r\n이미지 사이즈를\r\n950x1200으로 준비해" +
+    " 주세요★";
 			// 
 			// output_dir_button
 			// 

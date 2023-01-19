@@ -18,7 +18,7 @@ namespace the_great_cover_generator
 		public the_great_cover_generator()
 		{
 			InitializeComponent();
-			adsbanner.ShowAd(728, 90, "p4678cjlfyac");
+			adsbanner.ShowAd(728, 90, "0ejeechs2huk");
 			subject_combobox.SelectedItem = "독서";
 
 		}
@@ -57,13 +57,13 @@ namespace the_great_cover_generator
 
 						while (true)
 						{
-							if (img.Cols < 800 || img.Rows < 1009)
+							if (img.Cols < 950 || img.Rows < 1200)
 							{
 								Cv2.Resize(img, dst, new OpenCvSharp.Size(img.Cols * 2, img.Rows * 2));
 								img = dst;
 							}
 
-							else if (img.Cols * 0.8 > 800 && img.Rows * 0.8 > 1009)
+							else if (img.Cols * 0.8 > 950 && img.Rows * 0.8 > 1200)
 							{
 								Cv2.Resize(img, dst, new OpenCvSharp.Size(img.Cols * 0.8, img.Rows * 0.8));
 								img = dst;
@@ -75,7 +75,7 @@ namespace the_great_cover_generator
 							}
 						}
 
-						Rect rect = new Rect((img.Cols / 2) - 400, (img.Rows / 2) - 504, 800, 1009);
+						Rect rect = new Rect((img.Cols / 2) - 475, (img.Rows / 2) - 600, 950, 1200);
 						picture_image = img.SubMat(rect);
 						Cv2.Resize(picture_image, _picture_image, new OpenCvSharp.Size(320, 400));
 
@@ -100,7 +100,7 @@ namespace the_great_cover_generator
 						Mat _picture_image = new Mat();
 						Mat img = Cv2.ImRead(pic_dir[i].ToString());
 
-						Cv2.Resize(img, picture_image, new OpenCvSharp.Size(800, 1009));
+						Cv2.Resize(img, picture_image, new OpenCvSharp.Size(950, 1200));
 						Cv2.Resize(img, _picture_image, new OpenCvSharp.Size(320, 400));
 
 						Directory.CreateDirectory("_resized_picture");
@@ -165,10 +165,6 @@ namespace the_great_cover_generator
 
 					Directory.CreateDirectory(output_dir + "/result");
 					Cv2.ImWrite(output_dir + "/result/result" + (i + 1).ToString() + ".png", result);
-
-					Cv2.ImShow("완료!", result);
-					Cv2.WaitKey(0);
-					Cv2.DestroyAllWindows();
 				}
 
 				MessageBox.Show("ㅇㅇ", "다됨");
