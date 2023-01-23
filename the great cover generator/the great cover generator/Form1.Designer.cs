@@ -48,7 +48,7 @@
 			this.adsbanner.ApplicationId = null;
 			this.adsbanner.BackColor = System.Drawing.Color.White;
 			this.adsbanner.HeightAd = 0;
-			this.adsbanner.Location = new System.Drawing.Point(111, 456);
+			this.adsbanner.Location = new System.Drawing.Point(112, 479);
 			this.adsbanner.Margin = new System.Windows.Forms.Padding(4);
 			this.adsbanner.Name = "adsbanner";
 			this.adsbanner.Size = new System.Drawing.Size(728, 90);
@@ -70,7 +70,7 @@
 			// run_button
 			// 
 			this.run_button.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.run_button.Location = new System.Drawing.Point(745, 383);
+			this.run_button.Location = new System.Drawing.Point(745, 391);
 			this.run_button.Name = "run_button";
 			this.run_button.Size = new System.Drawing.Size(170, 52);
 			this.run_button.TabIndex = 3;
@@ -94,10 +94,10 @@
 			this.cut_radiobutton.Checked = true;
 			this.cut_radiobutton.Location = new System.Drawing.Point(388, 301);
 			this.cut_radiobutton.Name = "cut_radiobutton";
-			this.cut_radiobutton.Size = new System.Drawing.Size(102, 18);
+			this.cut_radiobutton.Size = new System.Drawing.Size(138, 18);
 			this.cut_radiobutton.TabIndex = 5;
 			this.cut_radiobutton.TabStop = true;
-			this.cut_radiobutton.Text = "자르기 (권장됨)";
+			this.cut_radiobutton.Text = "자르기 (그나마 권장됨)";
 			this.cut_radiobutton.UseVisualStyleBackColor = true;
 			// 
 			// img_handling_label
@@ -143,16 +143,7 @@
             "세계사",
             "정치와 법",
             "경제",
-            "사회 문화",
-            "독일어",
-            "프랑스어",
-            "스페인어",
-            "중국어",
-            "일본어",
-            "러시아어",
-            "아랍어",
-            "베트남어",
-            "한문"});
+            "사회 문화"});
 			this.subject_combobox.Location = new System.Drawing.Point(581, 297);
 			this.subject_combobox.Name = "subject_combobox";
 			this.subject_combobox.Size = new System.Drawing.Size(121, 22);
@@ -183,7 +174,7 @@
 			// output_dir_button
 			// 
 			this.output_dir_button.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.output_dir_button.Location = new System.Drawing.Point(388, 383);
+			this.output_dir_button.Location = new System.Drawing.Point(388, 391);
 			this.output_dir_button.Name = "output_dir_button";
 			this.output_dir_button.Size = new System.Drawing.Size(314, 52);
 			this.output_dir_button.TabIndex = 10;
@@ -196,7 +187,7 @@
 			this.picture_picbox.Image = global::the_great_cover_generator.Properties.Resources.사진_넣어주세요;
 			this.picture_picbox.Location = new System.Drawing.Point(31, 35);
 			this.picture_picbox.Name = "picture_picbox";
-			this.picture_picbox.Size = new System.Drawing.Size(320, 400);
+			this.picture_picbox.Size = new System.Drawing.Size(323, 408);
 			this.picture_picbox.TabIndex = 0;
 			this.picture_picbox.TabStop = false;
 			this.picture_picbox.Click += new System.EventHandler(this.picture_picbox_Click);
@@ -205,7 +196,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(960, 568);
+			this.ClientSize = new System.Drawing.Size(960, 597);
 			this.Controls.Add(this.output_dir_button);
 			this.Controls.Add(this.description_label);
 			this.Controls.Add(this.subject_label);

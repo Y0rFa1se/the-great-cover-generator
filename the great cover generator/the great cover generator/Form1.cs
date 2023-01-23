@@ -1,5 +1,6 @@
 ﻿using OpenCvSharp;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -31,7 +32,7 @@ namespace the_great_cover_generator
 
 				if (cnt_pic == 1)
 				{
-					MessageBox.Show("프로그램을 껐다 켜지 않고 파일을 재선택 할 시에\n미리보기가 지1랄나는 버그가 있으니 양해좀ㅎ\n(미리보기만 그런거라 그냥 해도됨)", "ㅈㅅㅋㅋ");
+					MessageBox.Show("파일을 재선택 할 시에 미리보기가 고장나는 버그가 있으니 양해좀ㅎ\n(미리보기만 그런거라 그냥 해도됨)", "ㅈㅅㅋㅋ");
 				}
 				cnt_pic = 1;
 
@@ -55,29 +56,41 @@ namespace the_great_cover_generator
 						Mat img = Cv2.ImRead(pic_dir[i].ToString());
 						Mat dst = new Mat();
 
-						while (true)
+						if (img.Cols > 950 && img.Rows > 1200)
 						{
-							if (img.Cols < 950 || img.Rows < 1200)
-							{
-								Cv2.Resize(img, dst, new OpenCvSharp.Size(img.Cols * 2, img.Rows * 2));
-								img = dst;
-							}
+							float wRate = (950.0f / img.Cols);
+							float hRate = (1200.0f / img.Rows);
 
-							else if (img.Cols * 0.8 > 950 && img.Rows * 0.8 > 1200)
+							if (wRate < hRate)
 							{
-								Cv2.Resize(img, dst, new OpenCvSharp.Size(img.Cols * 0.8, img.Rows * 0.8));
+								Cv2.Resize(img, dst, new OpenCvSharp.Size(img.Cols * hRate, img.Rows * hRate));
 								img = dst;
 							}
 
 							else
 							{
-								break;
+								Cv2.Resize(img, dst, new OpenCvSharp.Size(img.Cols * wRate, img.Rows * wRate));
+								img = dst;
 							}
+						}
+
+						if (img.Cols < 950)
+						{
+							float rate = (950.0f / img.Cols);
+							Cv2.Resize(img, dst, new OpenCvSharp.Size(950, img.Rows * rate));
+							img = dst;
+						}
+
+						if (img.Rows < 1200)
+						{
+							float rate = (1200.0f / img.Rows);
+							Cv2.Resize(img, dst, new OpenCvSharp.Size(img.Cols * rate, 1200));
+							img = dst;
 						}
 
 						Rect rect = new Rect((img.Cols / 2) - 475, (img.Rows / 2) - 600, 950, 1200);
 						picture_image = img.SubMat(rect);
-						Cv2.Resize(picture_image, _picture_image, new OpenCvSharp.Size(320, 400));
+						Cv2.Resize(picture_image, _picture_image, new OpenCvSharp.Size(323, 408));
 
 						Directory.CreateDirectory("_resized_picture");
 						Cv2.ImShow("확인용", picture_image);
@@ -101,7 +114,7 @@ namespace the_great_cover_generator
 						Mat img = Cv2.ImRead(pic_dir[i].ToString());
 
 						Cv2.Resize(img, picture_image, new OpenCvSharp.Size(950, 1200));
-						Cv2.Resize(img, _picture_image, new OpenCvSharp.Size(320, 400));
+						Cv2.Resize(img, _picture_image, new OpenCvSharp.Size(323, 408));
 
 						Directory.CreateDirectory("_resized_picture");
 						Cv2.ImShow("확인용", picture_image);
