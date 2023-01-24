@@ -12,7 +12,6 @@ namespace the_great_cover_generator
 		string subject;
 		string output_dir;
 
-		int cnt_pic = 0;
 		int pic_dir_len;
 
 
@@ -28,13 +27,17 @@ namespace the_great_cover_generator
 		{
 			try
 			{
-				OpenFileDialog ofd = new OpenFileDialog();
-
-				if (cnt_pic == 1)
+				using (FileStream mystream = new FileStream("covers/빈화면.png", FileMode.Open))
 				{
-					MessageBox.Show("파일을 재선택 할 시에 미리보기가 고장나는 버그가 있으니 양해좀ㅎ\n(미리보기만 그런거라 그냥 해도됨)", "ㅈㅅㅋㅋ");
+					picture_picbox.Image = Image.FromStream(mystream);
 				}
-				cnt_pic = 1;
+
+				Directory.CreateDirectory("_resized_picture");
+				Directory.Delete("_resized_picture", true);
+
+				picture_dir_listbox.Items.Clear();
+
+				OpenFileDialog ofd = new OpenFileDialog();
 
 				ofd.Filter = "사진만 (png)|*.png|사진만 (jpg)|*.jpg|사진만 (all)|*.*";
 				ofd.Title = "사진 선택좀";
@@ -42,8 +45,6 @@ namespace the_great_cover_generator
 				ofd.ShowDialog();
 
 				string[] pic_dir = ofd.FileNames;
-
-				picture_dir_listbox.Items.Clear();
 
 				pic_dir_len = pic_dir.Length;
 
@@ -102,7 +103,10 @@ namespace the_great_cover_generator
 						Cv2.DestroyAllWindows();
 					}
 
-					picture_picbox.Image = Image.FromFile("_resized_picture/resized_picture" + pic_dir_len + "_preview.png");
+					using(FileStream mystream = new FileStream("_resized_picture/resized_picture" + pic_dir_len + "_preview.png", FileMode.Open))
+					{
+						picture_picbox.Image = Image.FromStream(mystream);
+					}
 				}
 
 				else
@@ -126,15 +130,16 @@ namespace the_great_cover_generator
 						Cv2.DestroyAllWindows();
 					}
 
-					picture_picbox.Image = Image.FromFile("_resized_picture/resized_picture" + pic_dir_len + "_preview.png");
+					using (FileStream mystream = new FileStream("_resized_picture/resized_picture" + pic_dir_len + "_preview.png", FileMode.Open))
+					{
+						picture_picbox.Image = Image.FromStream(mystream);
+					}
 				}
 			}
 
 			catch (Exception err)
 			{
 				MessageBox.Show(err.ToString(), "뭐함?");
-
-				cnt_pic = 0;
 			}
 		}
 		private void subject_combobox_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,7 +152,10 @@ namespace the_great_cover_generator
 
 			if (selected != null && selected != "사진을 선택해주세요 (여러장 선택 가능)")
 			{
-				picture_picbox.Image = Image.FromFile(selected.Substring(0, selected.IndexOf(".png")) + "_preview.png");
+				using (FileStream mystream = new FileStream(selected.Substring(0, selected.IndexOf(".png")) + "_preview.png", FileMode.Open))
+				{
+					picture_picbox.Image = Image.FromStream(mystream);
+				}
 			}
 		}
 		private void output_dir_button_Click(object sender, EventArgs e)
@@ -178,6 +186,9 @@ namespace the_great_cover_generator
 
 					Directory.CreateDirectory(output_dir + "/result");
 					Cv2.ImWrite(output_dir + "/result/result" + (i + 1).ToString() + ".png", result);
+
+					Directory.CreateDirectory("_resized_picture");
+					Directory.Delete("_resized_picture", true);
 				}
 
 				MessageBox.Show("ㅇㅇ", "다됨");

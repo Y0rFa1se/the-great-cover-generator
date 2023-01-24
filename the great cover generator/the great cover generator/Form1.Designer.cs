@@ -74,7 +74,7 @@
 			this.run_button.Name = "run_button";
 			this.run_button.Size = new System.Drawing.Size(170, 52);
 			this.run_button.TabIndex = 3;
-			this.run_button.Text = "실행";
+			this.run_button.Text = "저장";
 			this.run_button.UseVisualStyleBackColor = true;
 			this.run_button.Click += new System.EventHandler(this.run_button_Click);
 			// 
@@ -120,7 +120,7 @@
             "화법과 작문",
             "영어",
             "영어듣기",
-            "영어 독해 연습",
+            "영어독해연습",
             "수학1",
             "수학2",
             "미적분",
@@ -143,7 +143,7 @@
             "세계사",
             "정치와 법",
             "경제",
-            "사회 문화"});
+            "사회문화"});
 			this.subject_combobox.Location = new System.Drawing.Point(581, 297);
 			this.subject_combobox.Name = "subject_combobox";
 			this.subject_combobox.Size = new System.Drawing.Size(121, 22);
