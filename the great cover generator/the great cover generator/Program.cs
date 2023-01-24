@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace the_great_cover_generator
@@ -14,6 +15,9 @@ namespace the_great_cover_generator
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new the_great_cover_generator());
+
+			Directory.CreateDirectory("_resized_picture");
+			Directory.Delete("_resized_picture", true);
 		}
 	}
 }
